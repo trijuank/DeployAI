@@ -27,9 +27,8 @@ const SECTIONS = [
   { id: "estrategias", label: "Estrategias asistidas" },
   { id: "riesgos", label: "Riesgos y seguridad" },
   { id: "prompts", label: "Prompts efectivos" },
+  { id: "ejemplo", label: "Ejemplo practico" },
   { id: "demo", label: "La demo" },
-  { id: "simulacion", label: "Simulación en vivo" },
-  { id: "estado", label: "Estado en vivo" },
   { id: "preguntas", label: "Preguntas" },
 ];
 
@@ -673,24 +672,24 @@ export default function App() {
           </div>
         </Reveal>
 
-        {/* 10. LA DEMO */}
-        <Reveal id="demo" setRef={setRef} visible={visible.demo}
+        {/* 10. EJEMPLO*/}
+        <Reveal id="ejemplo" setRef={setRef} visible={visible.demo}
           className="min-h-screen flex flex-col justify-center items-start px-6 md:px-16 py-24">
           <Eyebrow>meta</Eyebrow>
           <h2 className="font-display font-semibold text-3xl md:text-6xl max-w-3xl leading-tight">
-            Todo lo que acaban de ver fue construido con este enfoque.
+            La presentacion que acaban de ver fue construida con este enfoque.
           </h2>
           <p className="mt-8 text-lg md:text-2xl max-w-2xl" style={{ color: "var(--text-dim)" }}>
             Esta página fue generada y desplegada con IA.
           </p>
         </Reveal>
 
-        {/* 11. SIMULACIÓN DE DESPLIEGUE */}
-        <Reveal id="simulacion" setRef={setRef} visible={visible.simulacion}
+        {/* 11. DEMO EN VIVO */}
+        <Reveal id="demo" setRef={setRef} visible={visible.simulacion}
           className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24">
           <Eyebrow>en vivo</Eyebrow>
           <h2 className="font-display font-semibold text-3xl md:text-5xl max-w-3xl mb-10">
-            A continuacion veran demo en vivo creado y desplegado con v0.app
+            A continuacion veran una demo en vivo utilizando v0.app
           </h2>
         </Reveal>
 
