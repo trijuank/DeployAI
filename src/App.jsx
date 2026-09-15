@@ -673,7 +673,7 @@ export default function App() {
         </Reveal>
 
         {/* 10. EJEMPLO*/}
-        <Reveal id="ejemplo" setRef={setRef} visible={visible.demo}
+        <Reveal id="ejemplo" setRef={setRef} visible={visible.ejemplo}
           className="min-h-screen flex flex-col justify-center items-start px-6 md:px-16 py-24">
           <Eyebrow>meta</Eyebrow>
           <h2 className="font-display font-semibold text-3xl md:text-6xl max-w-3xl leading-tight">
@@ -685,7 +685,7 @@ export default function App() {
         </Reveal>
 
         {/* 11. DEMO EN VIVO */}
-        <Reveal id="demo" setRef={setRef} visible={visible.simulacion}
+        <Reveal id="demo" setRef={setRef} visible={visible.demo}
           className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24">
           <Eyebrow>en vivo</Eyebrow>
           <h2 className="font-display font-semibold text-3xl md:text-5xl max-w-3xl mb-10">
