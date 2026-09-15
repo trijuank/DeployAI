@@ -11,9 +11,9 @@ import {
 /* ------------------------------------------------------------------ */
 
 const TEAM = [
-  "Nicolás Enrique Granada Fernández",
   "Juan Camilo López Quintana",
   "Angie Melissa Ocoro Hurtado",
+  "Nicolás Enrique Granada Fernández",
   "Brayan Camilo Urrea Jurado",
 ];
 
@@ -681,7 +681,7 @@ export default function App() {
             Todo lo que acaban de ver fue construido con este enfoque.
           </h2>
           <p className="mt-8 text-lg md:text-2xl max-w-2xl" style={{ color: "var(--text-dim)" }}>
-            Esta página fue generada con IA y va a desplegarse en vivo, frente a ustedes.
+            Esta página fue generada y desplegada con IA.
           </p>
         </Reveal>
 
@@ -690,100 +690,11 @@ export default function App() {
           className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24">
           <Eyebrow>en vivo</Eyebrow>
           <h2 className="font-display font-semibold text-3xl md:text-5xl max-w-3xl mb-10">
-            Simulación de despliegue
+            A continuacion veran demo en vivo creado y desplegado con v0.app
           </h2>
-
-          <div className="max-w-2xl">
-            <button
-              onClick={runDeploy}
-              disabled={deploying}
-              className="flex items-center gap-3 px-7 py-4 rounded-xl font-display font-semibold text-base mb-8"
-              style={{
-                background: deploying ? "var(--panel-2)" : "var(--accent)",
-                color: deploying ? "var(--text-dim)" : "#0A0E14",
-                cursor: deploying ? "default" : "pointer",
-              }}
-            >
-              <Rocket size={20} />
-              {deploying ? "Desplegando…" : deployDone ? "Volver a desplegar" : "Simular despliegue"}
-            </button>
-
-            {(deployLines.length > 0) && (
-              <div className="code-block relative overflow-hidden">
-                <div className="code-block-head flex items-center gap-2">
-                  <Terminal size={13} /> terminal — deploy.sh
-                </div>
-                <div className="code-block-body">
-                  {deployLines.map((line, i) => (
-                    <div key={i} style={{ color: line.startsWith("✅") ? "var(--success)" : "#C9D1E0" }}>
-                      {line}
-                    </div>
-                  ))}
-                  {deployDone && (
-                    <div className="mt-3 flex items-center gap-2" style={{ color: "var(--success)" }}>
-                      <CheckCircle2 size={16} />
-                      <span>https://mi-app-produccion.vercel.app</span>
-                    </div>
-                  )}
-                </div>
-                {deployDone && (
-                  <div className="pointer-events-none absolute inset-x-0 top-0 h-24">
-                    {Array.from({ length: 14 }).map((_, i) => (
-                      <span
-                        key={i}
-                        className="confetti-piece"
-                        style={{
-                          left: `${(i * 7.2) % 100}%`,
-                          background: i % 2 === 0 ? "var(--accent)" : "var(--success)",
-                          animationDelay: `${(i % 5) * 0.08}s`,
-                        }}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
         </Reveal>
 
-        {/* 12. ESTADO EN VIVO */}
-        <Reveal id="estado" setRef={setRef} visible={visible.estado}
-          className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24">
-          <Eyebrow>estado en vivo</Eyebrow>
-          <h2 className="font-display font-semibold text-3xl md:text-5xl max-w-3xl mb-10">
-            Estado en vivo
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
-            <div className="card p-7">
-              <div className="flex items-center gap-2 mb-3" style={{ color: "var(--text-dim)" }}>
-                <Eye size={16} />
-                <span className="text-sm">Última actualización</span>
-              </div>
-              <p className="font-display text-xl">14 de septiembre de 2026</p>
-            </div>
-            <div className="card p-7">
-              <div className="flex items-center gap-2 mb-3" style={{ color: "var(--text-dim)" }}>
-                <Users size={16} />
-                <span className="text-sm">Personas viendo esta demo</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <p className="font-display text-3xl">{counter}</p>
-                <button
-                  onClick={() => setCounter((c) => c + 1)}
-                  className="text-xs font-mono px-3 py-1.5 rounded-md"
-                  style={{ border: "1px solid var(--border)", color: "var(--text-dim)" }}
-                >
-                  +1
-                </button>
-              </div>
-            </div>
-          </div>
-          <p className="mt-6 text-xs font-mono max-w-md" style={{ color: "var(--text-dim)" }}>
-            Este bloque queda listo para editarse en vivo con un prompt durante la exposición.
-          </p>
-        </Reveal>
-
-        {/* 13. PREGUNTAS */}
+        {/* 12. PREGUNTAS */}
         <Reveal id="preguntas" setRef={setRef} visible={visible.preguntas}
           className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24">
           <HelpCircle size={36} style={{ color: "var(--accent)" }} className="mb-6" />
